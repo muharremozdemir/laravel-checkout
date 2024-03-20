@@ -1,0 +1,635 @@
+{
+	"info": {
+		"_postman_id": "d89a013d-a31d-404d-aa5f-d1e0ea6fa2f0",
+		"name": "DEMO API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24389711"
+	},
+	"item": [
+		{
+			"name": "Auth & Profile",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Ali Bulut\",\n    \"email\": \"alibulut@webudi.com\",\n    \"password\": \"123456\",\n    \"password_confirmation\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_url}}/{{v2_prefix}}/register",
+							"host": [
+								"{{local_url}}"
+							],
+							"path": [
+								"{{v2_prefix}}",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"iletisim@muharremozdemir.com\",\n    \"password\" : \"123123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_url}}/{{v2_prefix}}/login",
+							"host": [
+								"{{local_url}}"
+							],
+							"path": [
+								"{{v2_prefix}}",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Profile",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Yücel Bulur\",\n    \"email\": \"yucelbulut@webudi.com\",\n    \"password\": \"123456\",\n    \"password_confirmation\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_url}}/{{v2_prefix}}/update-profile",
+							"host": [
+								"{{local_url}}"
+							],
+							"path": [
+								"{{v2_prefix}}",
+								"update-profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check Email",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "yucelbulut@webudi.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local_url}}/{{v2_prefix}}/check-user",
+							"host": [
+								"{{local_url}}"
+							],
+							"path": [
+								"{{v2_prefix}}",
+								"check-user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "Get All Categories",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local_url}}/{{v2_prefix}}/categories",
+							"host": [
+								"{{local_url}}"
+							],
+							"path": [
+								"{{v2_prefix}}",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "6|fpRMEz6vkepKF9HcekUOJt53OcsnVo4Iul7hFdv53735dcd5",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local_url}}/{{v2_prefix}}/categories/1",
+							"host": [
+								"{{local_url}}"
+							],
+							"path": [
+								"{{v2_prefix}}",
+								"categories",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Get All Products",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|OfbKoAKfPvitHecy6qnnWJGSwIy9S66FPljOgoP00e81cbf8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local_url}}/{{v2_prefix}}/products",
+							"host": [
+								"{{local_url}}"
+							],
+							"path": [
+								"{{v2_prefix}}",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product Detail",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "6|fpRMEz6vkepKF9HcekUOJt53OcsnVo4Iul7hFdv53735dcd5",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local_url}}/{{v2_prefix}}/products/1",
+							"host": [
+								"{{local_url}}"
+							],
+							"path": [
+								"{{v2_prefix}}",
+								"products",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Checkout",
+			"item": [
+				{
+					"name": "Add To Cart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|xLMIkzQa5XTM1M7YhxFCHiN7P7Qx7kHFvBIPapc9dabbb0ad",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product_id\":1,\r\n    \"piece\":2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_url}}/{{v2_prefix}}/checkout/add-to-cart",
+							"host": [
+								"{{local_url}}"
+							],
+							"path": [
+								"{{v2_prefix}}",
+								"checkout",
+								"add-to-cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Checkout",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "6|fpRMEz6vkepKF9HcekUOJt53OcsnVo4Iul7hFdv53735dcd5",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_url}}/{{v2_prefix}}/checkout/get-checkout",
+							"host": [
+								"{{local_url}}"
+							],
+							"path": [
+								"{{v2_prefix}}",
+								"checkout",
+								"get-checkout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Increase Quantity",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|xLMIkzQa5XTM1M7YhxFCHiN7P7Qx7kHFvBIPapc9dabbb0ad",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product_id\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_url}}/{{v2_prefix}}/checkout/increase-quantity",
+							"host": [
+								"{{local_url}}"
+							],
+							"path": [
+								"{{v2_prefix}}",
+								"checkout",
+								"increase-quantity"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Decrease Quantity",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|xLMIkzQa5XTM1M7YhxFCHiN7P7Qx7kHFvBIPapc9dabbb0ad",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product_id\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_url}}/{{v2_prefix}}/checkout/decrease-quantity",
+							"host": [
+								"{{local_url}}"
+							],
+							"path": [
+								"{{v2_prefix}}",
+								"checkout",
+								"decrease-quantity"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "6|fpRMEz6vkepKF9HcekUOJt53OcsnVo4Iul7hFdv53735dcd5",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product_id\":10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_url}}/{{v2_prefix}}/checkout/remove-product",
+							"host": [
+								"{{local_url}}"
+							],
+							"path": [
+								"{{v2_prefix}}",
+								"checkout",
+								"remove-product"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|xLMIkzQa5XTM1M7YhxFCHiN7P7Qx7kHFvBIPapc9dabbb0ad",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_url}}/{{v2_prefix}}/order/create",
+							"host": [
+								"{{local_url}}"
+							],
+							"path": [
+								"{{v2_prefix}}",
+								"order",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|xLMIkzQa5XTM1M7YhxFCHiN7P7Qx7kHFvBIPapc9dabbb0ad",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"order_id\":2,\r\n    \"status\":\"Approved\"// ['Approved', 'Denied']\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_url}}/{{v2_prefix}}/order/change-status",
+							"host": [
+								"{{local_url}}"
+							],
+							"path": [
+								"{{v2_prefix}}",
+								"order",
+								"change-status"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "3|j2vX5LDGG4sw10nsrprarxU4emNvOI0QqBt0hNTn9bf831f2",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "local_url",
+			"value": "http://127.0.0.1:8000",
+			"type": "string"
+		},
+		{
+			"key": "live_url",
+			"value": "https://demoapi.webudi.tech",
+			"type": "string"
+		},
+		{
+			"key": "v1_prefix",
+			"value": "api/v1",
+			"type": "string"
+		},
+		{
+			"key": "v2_prefix",
+			"value": "api/v2",
+			"type": "string"
+		}
+	]
+}

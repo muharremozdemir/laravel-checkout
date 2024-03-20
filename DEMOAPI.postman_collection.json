@@ -1,0 +1,314 @@
+{
+	"info": {
+		"_postman_id": "200df2e0-f232-4a80-a2f3-e6d84d74a3f9",
+		"name": "DEMO API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1591697",
+		"_collection_link": "https://lively-sunset-2412-1.postman.co/workspace/My-Workspace~c6dac992-10c5-4aab-8ad4-9c02277be6c5/collection/1591697-200df2e0-f232-4a80-a2f3-e6d84d74a3f9?action=share&source=collection_link&creator=1591697"
+	},
+	"item": [
+		{
+			"name": "Auth & Profile",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Ali Bulut\",\n    \"email\": \"alibulut@webudi.com\",\n    \"password\": \"123456\",\n    \"password_confirmation\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_url}}/{{prefix}}/register",
+							"host": [
+								"{{local_url}}"
+							],
+							"path": [
+								"{{prefix}}",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"alibulut@webudi.com\",\n    \"password\" : \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_url}}/{{prefix}}/login",
+							"host": [
+								"{{local_url}}"
+							],
+							"path": [
+								"{{prefix}}",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Profile",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Yücel Bulur\",\n    \"email\": \"yucelbulut@webudi.com\",\n    \"password\": \"123456\",\n    \"password_confirmation\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_url}}/{{prefix}}/update-profile",
+							"host": [
+								"{{local_url}}"
+							],
+							"path": [
+								"{{prefix}}",
+								"update-profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check Email",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "yucelbulut@webudi.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local_url}}/{{prefix}}/check-user",
+							"host": [
+								"{{local_url}}"
+							],
+							"path": [
+								"{{prefix}}",
+								"check-user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "Get All Categories",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local_url}}/{{prefix}}/categories",
+							"host": [
+								"{{local_url}}"
+							],
+							"path": [
+								"{{prefix}}",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Category",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local_url}}/{{prefix}}/categories/18",
+							"host": [
+								"{{local_url}}"
+							],
+							"path": [
+								"{{prefix}}",
+								"categories",
+								"18"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Get All Products",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local_url}}/{{prefix}}/products",
+							"host": [
+								"{{local_url}}"
+							],
+							"path": [
+								"{{prefix}}",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product Detail",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|QtPvL4Wxb0UoPQbNLZ5rhxfiJlnxrsZVQGfRZbFp",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local_url}}/{{prefix}}/products/5",
+							"host": [
+								"{{local_url}}"
+							],
+							"path": [
+								"{{prefix}}",
+								"products",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "3|j2vX5LDGG4sw10nsrprarxU4emNvOI0QqBt0hNTn9bf831f2",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "local_url",
+			"value": "http://demoapi.test",
+			"type": "string"
+		},
+		{
+			"key": "live_url",
+			"value": "https://demoapi.webudi.tech",
+			"type": "string"
+		},
+		{
+			"key": "prefix",
+			"value": "api/v1",
+			"type": "string"
+		}
+	]
+}
